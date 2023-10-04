@@ -11,7 +11,7 @@ on:
 
 jobs:
   pre-commit:
-    name: Lint Terraform and README files
+    name: Lint code and README files
     runs-on: ubuntu-latest
     steps:
 
