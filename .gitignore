@@ -128,3 +128,6 @@ tmtags
 *.sql
 *.sqlite
 *.db
+/backend/node-express/hello-world/package-lock.json
+/backend/node-express/hello-world/yarn.lock
+/backend/node-express/hello-world/package-lock.json
