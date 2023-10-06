@@ -1,0 +1,12 @@
+{
+  "name": "node-express-base-seed",
+  "version": "1.0.0",
+  "description": "A foundational seed for Node-Express projects.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
