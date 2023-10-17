@@ -7,7 +7,7 @@ class HealthController {
         this.router = express.Router();
 
         // Setting the routes for the greeting endpoint group
-        this.router.get('/', this.health().bind(this)); // Binding is necessary for 'this' to refer to the class instance
+        this.router.get('/', this.health.bind(this)); // Binding is necessary for 'this' to refer to the class instance
     }
 
     getRouter() {

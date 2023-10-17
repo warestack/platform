@@ -1,5 +1,6 @@
 const express = require('express');
-const UserService = require('../services/users.service');
+
+const UserService = require('./user.service');
 
 class UsersController {
     constructor() {
