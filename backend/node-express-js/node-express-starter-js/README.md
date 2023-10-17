@@ -9,9 +9,9 @@ World!".
 - Configure environment variables as described in the [local development](#local-development) section.
 - Run `yarn install` to install the necessary dependencies.
 - Use `yarn start` to start the server.
-- Access the API at `http://localhost:3000`. You should receive a "Hello, World!" message.
-- The `healthz` endpoint at http://localhost:3000/healthz provides a health check response which is crucial for
-    Warestack's deployment automation.
+- Access the API at [localhost:3000](http://localhost:3000). You should receive a "Hello, World!" message.
+- The `healthz` endpoint at [localhost:3000/healthz](http://localhost:3000/healthz) provides a health check response
+  which is crucial for Warestack's deployment automation.
 
 ## Dependencies
 

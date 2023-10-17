@@ -14,11 +14,11 @@ following features:
 - Configure environment variables as described in the [local development](#local-development) section.
 - Run `pip install -r requirements.txt` to install the necessary dependencies.
 - Use `python3 server.py` to start the server.
-- Access the API at `http://localhost:5000`. You should receive a "Hello, World!" message.
-- User operations are available at http://localhost:5000/users. For specific user operations, use their email, e.g.,
-  http://localhost:5000/users/useremail@example.com.
-- The healthz endpoint at http://localhost:5000/healthz provides a health check response which is crucial for
-  Warestack's deployment automation.
+- Access the API at [localhost:5000](http://localhost:5000). You should receive a "Hello, World!" message.
+- User operations are available at [localhost:5000/users](http://localhost:5000/users). For specific user operations,
+  use their email, e.g., `localhost:5000/users/useremail@example.com`.
+- The healthz endpoint at [localhost:5000/healthz](http://localhost:5000/healthz) provides a health check response which
+  is crucial for Warestack's deployment automation.
 
 ## Dependencies
 

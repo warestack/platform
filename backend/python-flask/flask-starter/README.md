@@ -9,9 +9,9 @@ includes a `healthz` endpoint, essential for automated deployments on Warestack.
 - Configure environment variables as described in the [local development](#local-development) section.
 - Run `pip install -r requirements.txt` to install the necessary dependencies.
 - Use `python3 server.py` to start the server.
-- Access the API at `http://localhost:5000`. You should receive a "Hello, World!" message.
-- The healthz endpoint at http://localhost:5000/healthz provides a health check response which is crucial for
-  Warestack's deployment automation.
+- Access the API at [localhost:5000](http://localhost:5000). You should receive a "Hello, World!" message.
+- The healthz endpoint at [localhost:5000/healthz](http://localhost:5000/healthz) provides a health check response which
+  is crucial for Warestack's deployment automation.
 
 ## Dependencies
 
