@@ -1,23 +1,23 @@
-# Node Express - Mongoose with Javascript Seed
+# Hello World - Node Express with Javascript Seed
 
-This seed helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated MongoDB support
-through Mongoose.
+This seed is a basic starter for building an Express.js API with **JavaScript** that simply responds with "Hello,
+World!". Additionally, it includes a `healthz` endpoint, essential for automated deployments on Warestack.
 
 ## Getting Started
 
-- Navigate to the `mongoose` directory.
+- Navigate to the `node-js-express-starter` directory.
 - Configure environment variables as described in the [local development](#local-development) section.
-- Ensure you have a MongoDB instance running or use your connection string in the `.env` for an external database.
 - Run `yarn install` to install the necessary dependencies.
 - Use `yarn start` to start the server.
-- Your API is now connected to a MongoDB instance, and you can begin creating models, routes, etc.
+- Access the API at [localhost:3000](http://localhost:3000). You should receive a "Hello, World!" message.
+- The `healthz` endpoint at [localhost:3000/healthz](http://localhost:3000/healthz) provides a health check response
+  which is crucial for Warestack's deployment automation.
 
 ## Dependencies
 
 This seed uses:
 
 - [Express.js](https://expressjs.com/): A fast, minimalist web framework for Node.js.
-- [Mongoose](https://mongoosejs.com/): Elegant MongoDB object modeling for Node.js.
 
 ## Local Development
 

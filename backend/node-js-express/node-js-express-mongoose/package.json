@@ -1,5 +1,5 @@
 {
-  "name": "node-express-mongoose-js",
+  "name": "node-js-express-mongoose",
   "version": "1.0.0",
   "description": "A foundational seed for Node-Express and Javascript with Mongoose projects.",
   "main": "server.js",

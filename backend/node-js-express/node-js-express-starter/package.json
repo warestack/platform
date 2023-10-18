@@ -1,5 +1,5 @@
 {
-  "name": "node-express-started-js",
+  "name": "node-js-express-starter",
   "version": "1.0.0",
   "description": "A foundational seed for Node-Express and Javascript projects.",
   "main": "server.js",

@@ -5,9 +5,9 @@ configurations and additions.
 
 ## Folder Structure
 
-- **node-express-starter-js**: This contains a basic Node-Express seed to get you started with a simple "Hello, World!"
+- **node-js-express-starter**: This contains a basic Node-Express seed to get you started with a simple "Hello, World!"
   API.
-- **node-express-mongoose-js**: This seed incorporates Mongoose, enabling you to quickly start a project with MongoDB
+- **node-js-express-mongoose**: This seed incorporates Mongoose, enabling you to quickly start a project with MongoDB
   integration.
 
 ## Getting Started
