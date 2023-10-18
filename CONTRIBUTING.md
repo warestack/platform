@@ -96,7 +96,7 @@ changes can be merged. Please check the output of the failed GitHub Action for d
 If you have any questions or need help contributing to this repository, please reach out to the maintainers through:
 
 - The issue tracker.
-- On our [Discord channel](https://discord.gg/2yXQUTMs).
+- On our [Discord channel](https://discord.gg/mDQd2kcX).
 
 ## Code of Conduct
 
