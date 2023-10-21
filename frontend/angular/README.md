@@ -39,7 +39,8 @@ You can start editing the page by modifying `src/app/app.component.html`. The pa
 To learn more about Angular, take a look at the following resources:
 
 - [Angular documentation](https://angular.io/docs)
-- To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- To get more help on the Angular CLI use `ng help` or go check out
+  the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Questions & contributions
 
