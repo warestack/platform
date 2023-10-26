@@ -128,3 +128,6 @@ tmtags
 *.sql
 *.sqlite
 *.db
+/backend/node-js-express/node-js-express-starter/package-lock.json
+/backend/node-js-express/node-js-express-starter/yarn.lock
+/backend/node-js-express/node-js-express-starter/package-lock.json

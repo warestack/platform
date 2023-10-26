@@ -17,9 +17,10 @@ implementing your logic.
 
 ## Technologies & Frameworks Supported
 
-- **Web Frameworks**: React, Vue.js, Angular, etc.
-- **Backend Frameworks**: Express, Django, Flask, etc.
-- **Databases**: MongoDB, PostgreSQL, MySQL, Elasticsearch, etc.
+- **Frontend Frameworks**: React, Vue.js, Angular, etc.
+- **Backend Frameworks**: Node.js, Django, Flask, etc.
+- **Data Processing**: Pandas, Apache Spark, Hadoop, Kubernetes Jobs, etc.
+- **Artificial Intelligence & Machine Learning**: TensorFlow, PyTorch, SciKit-Learn, Keras, etc.
 - ... and many more!
 
 ## How to Use a Seed
@@ -38,9 +39,10 @@ we'd love for you to contribute. Check out our [Contributing Guide](./CONTRIBUTI
 
 When creating a PR, make sure to attach appropriate labels. This helps in categorizing and reviewing PRs efficiently:
 
-- `web-framework`: For seeds related to web frameworks.
+- `frontend`: For seeds related to frontend frameworks.
 - `backend`: For backend-specific seeds.
-- `database`: For seeds with a specific database focus.
+- `data-processing`: For seeds focused on data processing techniques and tools.
+- `ml/ai`: For seeds related to artificial intelligence and machine learning technologies.
 - ... (you can extend this list based on the categories of seeds you anticipate)
 
 ## What Makes a Good Seed?
@@ -56,7 +58,7 @@ When creating a PR, make sure to attach appropriate labels. This helps in catego
 ## Resources
 
 - [Warestack Official Documentation](https://www.warestack.com/documentation)
-- [Warestack Community Discord](https://discord.gg/2yXQUTMs)
+- [Warestack Community Discord](https://discord.gg/pqg5sxhx6Y)
 - [Warestack Platform](https://www.warestack.com/)
 
 ## License
@@ -65,4 +67,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ---
 
-❤️ Made with passion by the Warestack Community. Join us on [Discord](https://discord.gg/2yXQUTMs)!
+❤️ Made with passion by the Warestack Community. Join us on [Discord](https://discord.gg/pqg5sxhx6Y)!
