@@ -58,7 +58,7 @@ When creating a PR, make sure to attach appropriate labels. This helps in catego
 ## Resources
 
 - [Warestack Official Documentation](https://www.warestack.com/documentation)
-- [Warestack Community Discord](https://discord.gg/mDQd2kcX)
+- [Warestack Community Discord](https://discord.gg/pqg5sxhx6Y)
 - [Warestack Platform](https://www.warestack.com/)
 
 ## License
@@ -67,4 +67,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ---
 
-❤️ Made with passion by the Warestack Community. Join us on [Discord](https://discord.gg/mDQd2kcX)!
+❤️ Made with passion by the Warestack Community. Join us on [Discord](https://discord.gg/pqg5sxhx6Y)!
