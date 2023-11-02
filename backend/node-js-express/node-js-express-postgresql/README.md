@@ -9,7 +9,8 @@ through Mongoose. Additionally, it includes a `healthz` endpoint, essential for 
 - Configure environment variables as described in the [local development](#local-development) section.
 - Ensure you have a MongoDB instance running or use your connection string in the `.env` for an external database.
 - Use your preferred dependency manager to install dependencies (npm, yarn, pnpm, etc).
-- Our recommended one is yarn so the related command is `yarn install`.- Use `yarn start` to start the server.
+- Our recommended one is yarn so the related command is `yarn install`.
+- Use `yarn start` to start the server.
 - Your API is now connected to a MongoDB instance, and you can begin creating models, routes, etc.
 
 ## Required environment variables
@@ -17,7 +18,12 @@ through Mongoose. Additionally, it includes a `healthz` endpoint, essential for 
 This seed requires the following environment variables:
 
 - `PORT` = The port that the node server will be exposed.
-- `MONGO_URI` = The URI that enables the connection to the related Mongo database.
+- `POSTGRES_HOST` = The host that features the related PostgreSQL instance.
+- `POSTGRES_DATABASE` = The name of the PostgreSQL database that the Node instance should connect to.
+- `POSTGRES_USER` = The user that has access to the PostgreSQL database that the API should utilize.
+- `POSTGRES_PASSWORD` = The password of the PostgreSQL user.
+- `POSTGRES_PORT` = The port that the PostgreSQL instance listens to. Most of the time defaults to 5432
+- `POSTGRES_SSL` = Set this to true if your PostgreSQL instance offers an encrypted connection (SSL)
 
 ## Dependencies
 
