@@ -12,5 +12,3 @@ syncDb().then(() => {
     console.error('Unable to start the server:', error);
     process.exit(1); // Exit with a failure code
 });
-
-
