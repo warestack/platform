@@ -30,8 +30,8 @@ This seed requires the following environment variables:
 This seed uses:
 
 - [Express.js](https://expressjs.com/): A fast, minimalist web framework for Node.js.
-- [PG](https://github.com/brianc/node-postgres): Non-blocking PostgreSQL client for Node.js. Pure JavaScript and optional native bindings.
-- [PgHstore](https://github.com/scarney81/pg-hstore): A node package for serializing and deserializing JSON data to hstore format.
+- [PG](https://github.com/brianc/node-postgres): Non-blocking PostgreSQL client for Node.js.
+- [PgHstore](https://github.com/scarney81/pg-hstore): A node package for serializing and deserializing JSON data.
 - [Sequelize](https://sequelize.org/): Elegant ORM for any kind of SQL databases (in this seed we have PostgreSQL).
 
 ## Local Development
