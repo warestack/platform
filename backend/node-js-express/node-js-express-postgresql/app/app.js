@@ -25,7 +25,7 @@ class App {
 
   routes() {
     this.app.use('/', RootController);
-    this.app.use('/health', HealthController);
+    this.app.use('/healthz', HealthController);
     this.app.use('/users', UsersController);
 
     // Generic error handler
