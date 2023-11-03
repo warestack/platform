@@ -7,11 +7,17 @@ World!". Additionally, it includes a `healthz` endpoint, essential for automated
 
 - Navigate to the `node-js-express-starter` directory.
 - Configure environment variables as described in the [local development](#local-development) section.
-- Run `yarn install` to install the necessary dependencies.
-- Use `yarn start` to start the server.
+- Use your preferred dependency manager to install dependencies (npm, yarn, pnpm, etc).
+- Our recommended one is yarn so the related command is `yarn install`.- Use `yarn start` to start the server.
 - Access the API at [localhost:3000](http://localhost:3000). You should receive a "Hello, World!" message.
 - The `healthz` endpoint at [localhost:3000/healthz](http://localhost:3000/healthz) provides a health check response
   which is crucial for Warestack's deployment automation.
+
+## Required environment variables
+
+This seed requires the following environment variables:
+
+- `PORT` = The port that the node server will be exposed.
 
 ## Dependencies
 
@@ -25,6 +31,7 @@ This seed uses environment variables for configuration:
 
 - Make sure to set up your `.env` file by using `.env.example` as a reference.
 - Adjust the values in `.env` as necessary to match your setup.
+- Use the `yarn start` command to get started.
 
 ## Warestack Deployments
 

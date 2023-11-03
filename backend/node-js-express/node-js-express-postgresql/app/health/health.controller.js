@@ -20,4 +20,4 @@ class HealthController {
   }
 }
 
-module.exports = HealthController;
+module.exports = new HealthController().getRouter();

@@ -32,3 +32,18 @@ repos:
         # Spell checks files, ignoring specific words if needed
       - id: codespell
         args: ['--ignore-words-list=seperated']
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.52.0
+    hooks:
+      - id: eslint
+        exclude: 'frontend/.*|.eslintrc.js'
+        files: \.[jt]sx?$  # *.js, *.jsx, *.ts and *.tsx
+        types: [file]
+        additional_dependencies:
+          - eslint@8.52.0
+          - eslint-config-standard@17.1.0
+          - eslint-plugin-import@2.29.0
+          - eslint-plugin-n@16.2.0
+          - eslint-plugin-promise@6.1.1
+          - eslint-config-next@13.5.5

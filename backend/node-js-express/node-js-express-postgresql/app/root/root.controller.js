@@ -19,4 +19,4 @@ class RootController {
   }
 }
 
-module.exports = RootController;
+module.exports = new RootController().getRouter();
