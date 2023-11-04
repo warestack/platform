@@ -18,6 +18,9 @@ class App {
     // create express js application
     this.app = express();
 
+    // Middleware for parsing JSON bodies
+    this.app.use(express.json());
+
     // Connect to MongoDB
     dbConfig.connect();
 
