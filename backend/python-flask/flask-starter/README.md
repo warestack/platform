@@ -28,8 +28,8 @@ This seed uses environment variables for configuration:
 
 ## Warestack Deployments
 
-For this Flask API to be compatible with automated deployments on Warestack, the inclusion of the `healthz` endpoint is
-mandatory. Warestack uses this endpoint to ensure that the service is running correctly.
+To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
+relies on this endpoint to verify the correct operation of the service.
 
 ## Questions & Contributions
 

@@ -1,17 +1,18 @@
-# Node Express - Mongoose with Javascript Seed
+# Node Express - PostgreSQL with Javascript Seed
 
-This seed helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated MongoDB support
-through Mongoose. Additionally, it includes a `healthz` endpoint, essential for automated deployments on Warestack.
+This seed helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated PostgreSQL
+support through Sequelize. Additionally, it includes a `healthz` endpoint, essential for automated deployments on
+Warestack.
 
 ## Getting Started
 
-- Navigate to the `node-js-express-mongoose` directory.
+- Navigate to the `node-js-express-postgresql` directory.
 - Configure environment variables as described in the [local development](#local-development) section.
-- Ensure you have a MongoDB instance running or use your connection string in the `.env` for an external database.
+- Ensure you have a PostgreSQL instance running or use your connection string in the `.env` for an external database.
 - Use your preferred dependency manager to install dependencies (npm, yarn, pnpm, etc).
 - Our recommended one is yarn so the related command is `yarn install`.
 - Use `yarn start` to start the server.
-- Your API is now connected to a MongoDB instance, and you can begin creating models, routes, etc.
+- Your API is now connected to a PostgreSQL instance, and you can begin creating models, routes, etc.
 
 ## Required environment variables
 
@@ -44,8 +45,9 @@ This seed uses environment variables for configuration:
 
 ## Warestack Deployments
 
-For this Flask API to be compatible with automated deployments on Warestack, the inclusion of the `healthz` endpoint is
-mandatory. Warestack uses this endpoint to ensure that the service is running correctly.
+
+To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
+relies on this endpoint to verify the correct operation of the service.
 
 ## Questions & Contributions
 
