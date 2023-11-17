@@ -20,7 +20,7 @@ This seed requires the following environment variables:
 
 - `PORT` = The port that the node server will be exposed.
 - `POSTGRES_HOST` = The host that features the related PostgreSQL instance.
-- `POSTGRES_DATABASE` = The name of the PostgreSQL database that the Node instance should connect to.
+- `POSTGRES_DB` = The name of the PostgreSQL database that the Node instance should connect to.
 - `POSTGRES_USER` = The user that has access to the PostgreSQL database that the API should utilize.
 - `POSTGRES_PASSWORD` = The password of the PostgreSQL user.
 - `POSTGRES_PORT` = The port that the PostgreSQL instance listens to. Most of the time defaults to 5432
@@ -44,7 +44,6 @@ This seed uses environment variables for configuration:
 - Use the `yarn start` command to get started.
 
 ## Warestack Deployments
-
 
 To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
 relies on this endpoint to verify the correct operation of the service.
