@@ -45,7 +45,6 @@ This seed uses environment variables for configuration:
 
 ## Warestack Deployments
 
-
 To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
 relies on this endpoint to verify the correct operation of the service.
 
