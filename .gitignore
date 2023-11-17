@@ -10,8 +10,9 @@ Thumbs.db
 # Node.js
 node_modules/
 
-# Dist directory
+# Dist directories
 /dist
+dist/
 
 # Environment configuration
 .env
