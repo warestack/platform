@@ -21,6 +21,7 @@ implementing your logic.
 - **Backend Frameworks**: Node.js, Django, Flask, etc.
 - **Data Processing**: Pandas, Apache Spark, Hadoop, Kubernetes Jobs, etc.
 - **Artificial Intelligence & Machine Learning**: TensorFlow, PyTorch, SciKit-Learn, Keras, etc.
+- **Infrastructure as Code**: Infrastructure templates for automating cloud infrastructure provisioning.
 - ... and many more!
 
 ## How to Use a Seed
@@ -43,6 +44,7 @@ When creating a PR, make sure to attach appropriate labels. This helps in catego
 - `backend`: For backend-specific seeds.
 - `data-processing`: For seeds focused on data processing techniques and tools.
 - `ml/ai`: For seeds related to artificial intelligence and machine learning technologies.
+- `infrastructure-as-code`: For seeds that include Terraform templates or other infrastructure as code components.
 - ... (you can extend this list based on the categories of seeds you anticipate)
 
 ## What Makes a Good Seed?
