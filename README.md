@@ -22,6 +22,7 @@ implementing your logic.
 - **Data Processing**: Pandas, Apache Spark, Hadoop, Kubernetes Jobs, etc.
 - **Artificial Intelligence & Machine Learning**: TensorFlow, PyTorch, SciKit-Learn, Keras, etc.
 - **Infrastructure as Code**: Infrastructure templates for automating cloud infrastructure provisioning.
+- **CI/CD & Automation Tools**: Workflow templates for continuous and integration and delivery.
 - ... and many more!
 
 ## How to Use a Seed
@@ -40,11 +41,12 @@ we'd love for you to contribute. Check out our [Contributing Guide](./CONTRIBUTI
 
 When creating a PR, make sure to attach appropriate labels. This helps in categorizing and reviewing PRs efficiently:
 
-- `frontend`: For seeds related to frontend frameworks.
-- `backend`: For backend-specific seeds.
-- `data-processing`: For seeds focused on data processing techniques and tools.
-- `ml/ai`: For seeds related to artificial intelligence and machine learning technologies.
-- `infrastructure-as-code`: For seeds that include Terraform templates or other infrastructure as code components.
+- `frontend`: For PRs related to frontend frameworks.
+- `backend`: For PRs specific to backend implementations.
+- `data-processing`: For PRs focused on data processing techniques and tools.
+- `ml/ai`: For PRs related to artificial intelligence and machine learning technologies.
+- `infrastructure-as-code`: For PRs related to infrastructure templates and other IaC components.
+- `ci/cd`: For PRs related to continuous integration and delivery tools.
 - ... (you can extend this list based on the categories of seeds you anticipate)
 
 ## What Makes a Good Seed?
