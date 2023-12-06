@@ -36,11 +36,6 @@ To use this seed:
 - Plan your deployment with `terraform plan`.
 - Apply the configuration with `terraform apply`.
 
-## Warestack Deployments
-
-To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
-relies on this endpoint to verify the correct operation of the service.
-
 ## Questions & Contributions
 
 If you have any questions or wish to contribute, please open an issue or submit a pull request.
