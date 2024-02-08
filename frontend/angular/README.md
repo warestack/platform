@@ -1,4 +1,4 @@
-# Angular seed
+# Angular Blueprint
 
 This is an [Angular](https://angular.io) project generated with [Angular CLI](https://github.com/angular/angular-cli).
 

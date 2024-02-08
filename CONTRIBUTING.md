@@ -1,6 +1,6 @@
 # Contributing to Warestack
 
-Thank you for considering contributing to Warestack Seeds! This repository hosts a collection of seeds designed to
+Thank you for considering contributing to Warestack Blueprints! This repository hosts a collection of blueprints designed to
 jump-start projects on our platform. Whether you're adding a new seed, improving an existing one, or simply fixing a
 typo, your contributions are greatly valued.
 
@@ -8,8 +8,8 @@ typo, your contributions are greatly valued.
 
 We appreciate and accept various contributions, such as:
 
-- New seeds for different technology stacks.
-- Improvements or updates to existing seeds.
+- New blueprints for different technology stacks.
+- Improvements or updates to existing blueprints.
 - Documentation updates and clarifications.
 - Bug fixes within the seed configurations or scripts.
 - Typo fixes.
@@ -26,7 +26,7 @@ To ensure a smooth contribution process:
 - **Push** your changes to your fork on GitHub.
 - **Open a pull request (PR)** against the main repository. Please include a detailed description of your contribution.
 
-Ensure that your contributions do not break existing seeds and are well-documented. New seeds should be accompanied by
+Ensure that your contributions do not break existing blueprints and are well-documented. New blueprints should be accompanied by
 sufficient documentation for users to implement them effectively.
 
 ## Guidelines
@@ -37,7 +37,7 @@ Keep these guidelines in mind when contributing:
 
 - Code and configurations should be well-documented and maintainable.
 - Describe in the PR what the changes are, their purpose, and any issues they address or enhancements they provide.
-- Before submitting, test your changes thoroughly. Ensure they don't negatively impact existing seeds.
+- Before submitting, test your changes thoroughly. Ensure they don't negatively impact existing blueprints.
 - All PRs should be reviewed by at least one other contributor or maintainer.
 - Avoid large monolithic PRs; keep them focused and modular.
 
@@ -47,11 +47,11 @@ Branch prefixes help to make it clear what the purpose of the PR branch is and m
 understand the changes being made. It's important to use consistent prefixes across all PR branches in the repository
 to maintain a clear and organized codebase.
 
-- `feature/`: New seeds or significant enhancements to existing ones.
+- `feature/`: New blueprints or significant enhancements to existing ones.
 - `fix/`: Bug fixes or minor tweaks.
 - `docs/`: Documentation improvements or additions.
 - `refactor/`: Code or configuration changes that don't add new features.
-- `test`: Adding or updating tests for seeds.
+- `test`: Adding or updating tests for blueprints.
 - `chore/`: Miscellaneous tasks, dependency updates, etc.
 
 - Examples:
@@ -103,4 +103,4 @@ If you have any questions or need help contributing to this repository, please r
 We uphold a standard of inclusivity, respect, and cooperation. Review our Code of Conduct to ensure a positive and
 welcoming environment for all contributors.
 
-Thank you for enriching Warestack Seeds!
+Thank you for enriching Warestack Blueprints!

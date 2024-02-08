@@ -1,6 +1,6 @@
-# Node-Express Seeds  (JavaScript Version)
+# Node-Express Blueprints  (JavaScript Version)
 
-This repository contains multiple seeds (starter templates) for Node.js projects using Express.js with different
+This repository contains multiple blueprints (starter templates) for Node.js projects using Express.js with different
 configurations and features as well as persistence options.
 
 ## Folder Structure
@@ -15,12 +15,13 @@ configurations and features as well as persistence options.
 ## Code Style
 
 The code style of these projects should be enforced by eslint to avoid messing up with your code editor configuration.
-Make sure to check the existing node-js seeds, to get an idea of the basic eslint configuration that you can extend.
+Make sure to check the existing node-js blueprints, to get an idea of the basic eslint configuration that you can
+extend.
 
 ## Getting Started
 
-To use any of the seeds, navigate to the respective folder and follow the instructions in its README.
+To use any of the blueprints, navigate to the respective folder and follow the instructions in its README.
 
 ## Contributions
 
-Feel free to contribute to these seeds by submitting pull requests or opening issues with suggestions/improvements.
+Feel free to contribute to these blueprints by submitting pull requests or opening issues with suggestions/improvements.

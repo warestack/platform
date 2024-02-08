@@ -1,6 +1,6 @@
-# Node Express - PostgreSQL with Javascript Seed
+# Node Express - PostgreSQL with Javascript Blueprint
 
-This seed helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated PostgreSQL
+This blueprint helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated PostgreSQL
 support through Sequelize. Additionally, it includes a `healthz` endpoint, essential for automated deployments on
 Warestack.
 
@@ -16,7 +16,7 @@ Warestack.
 
 ## Required environment variables
 
-This seed requires the following environment variables:
+This blueprint requires the following environment variables:
 
 - `PORT` = The port that the node server will be exposed.
 - `POSTGRES_HOST` = The host that features the related PostgreSQL instance.
@@ -28,16 +28,16 @@ This seed requires the following environment variables:
 
 ## Dependencies
 
-This seed uses:
+This blueprint uses:
 
 - [Express.js](https://expressjs.com/): A fast, minimalist web framework for Node.js.
 - [PG](https://github.com/brianc/node-postgres): Non-blocking PostgreSQL client for Node.js.
 - [PgHstore](https://github.com/scarney81/pg-hstore): A node package for serializing and deserializing JSON data.
-- [Sequelize](https://sequelize.org/): Elegant ORM for any kind of SQL databases (in this seed we have PostgreSQL).
+- [Sequelize](https://sequelize.org/): Elegant ORM for any kind of SQL databases (in this blueprint we have PostgreSQL).
 
 ## Local Development
 
-This seed uses environment variables for configuration:
+This blueprint uses environment variables for configuration:
 
 - Make sure to set up your `.env` file by using `.env.example` as a reference.
 - Adjust the values in `.env` as necessary to match your setup.
@@ -45,8 +45,8 @@ This seed uses environment variables for configuration:
 
 ## Warestack Deployments
 
-To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
-relies on this endpoint to verify the correct operation of the service.
+To ensure compatibility with automated deployments on Warestack, all blueprints must include a `healthz` endpoint.
+Warestack relies on this endpoint to verify the correct operation of the service.
 
 ## Questions & Contributions
 

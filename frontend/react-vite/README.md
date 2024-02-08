@@ -1,4 +1,4 @@
-# React with Vite and TypeScript seed
+# React with Vite and TypeScript Blueprint
 
 This is a [React](https://react.dev) project bootstrapped with [Vite](https://vitejs.dev).
 

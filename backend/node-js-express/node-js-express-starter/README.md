@@ -1,6 +1,6 @@
-# Hello World - Node Express with Javascript Seed
+# Hello World - Node Express with Javascript Blueprint
 
-This seed is a basic starter for building an Express.js API with **JavaScript** that simply responds with "Hello,
+This blueprint is a basic starter for building an Express.js API with **JavaScript** that simply responds with "Hello,
 World!". Additionally, it includes a `healthz` endpoint, essential for automated deployments on Warestack.
 
 ## Getting Started
@@ -15,19 +15,19 @@ World!". Additionally, it includes a `healthz` endpoint, essential for automated
 
 ## Required environment variables
 
-This seed requires the following environment variables:
+This blueprint requires the following environment variables:
 
 - `PORT` = The port that the node server will be exposed.
 
 ## Dependencies
 
-This seed uses:
+This blueprint uses:
 
 - [Express.js](https://expressjs.com/): A fast, minimalist web framework for Node.js.
 
 ## Local Development
 
-This seed uses environment variables for configuration:
+This blueprint uses environment variables for configuration:
 
 - Make sure to set up your `.env` file by using `.env.example` as a reference.
 - Adjust the values in `.env` as necessary to match your setup.
@@ -35,8 +35,8 @@ This seed uses environment variables for configuration:
 
 ## Warestack Deployments
 
-To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
-relies on this endpoint to verify the correct operation of the service.
+To ensure compatibility with automated deployments on Warestack, all blueprints must include a `healthz` endpoint.
+Warestack relies on this endpoint to verify the correct operation of the service.
 
 ## Questions & Contributions
 

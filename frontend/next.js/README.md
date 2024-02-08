@@ -1,4 +1,4 @@
-# Next.js with TypeScript seed
+# Next.js with TypeScript Blueprint
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

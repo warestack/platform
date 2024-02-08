@@ -1,6 +1,6 @@
-# Node Express - Mongoose with Javascript Seed
+# Node Express - Mongoose with Javascript Blueprint
 
-This seed helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated MongoDB support
+This blueprint helps you kickstart your Node.js projects using Express.js and **Javascript** with integrated MongoDB support
 through Mongoose. Additionally, it includes a `healthz` endpoint, essential for automated deployments on Warestack.
 
 ## Getting Started
@@ -14,21 +14,21 @@ through Mongoose. Additionally, it includes a `healthz` endpoint, essential for 
 
 ## Required environment variables
 
-This seed requires the following environment variables:
+This blueprint requires the following environment variables:
 
 - `PORT` = The port that the node server will be exposed.
 - `MONGO_URI` = The URI that enables the connection to the related Mongo database.
 
 ## Dependencies
 
-This seed uses:
+This blueprint uses:
 
 - [Express.js](https://expressjs.com/): A fast, minimalist web framework for Node.js.
 - [Mongoose](https://mongoosejs.com/): Elegant MongoDB object modeling for Node.js.
 
 ## Local Development
 
-This seed uses environment variables for configuration:
+This blueprint uses environment variables for configuration:
 
 - Make sure to set up your `.env` file by using `.env.example` as a reference.
 - Adjust the values in `.env` as necessary to match your setup.
@@ -36,8 +36,8 @@ This seed uses environment variables for configuration:
 
 ## Warestack Deployments
 
-To ensure compatibility with automated deployments on Warestack, all seeds must include a `healthz` endpoint. Warestack
-relies on this endpoint to verify the correct operation of the service.
+To ensure compatibility with automated deployments on Warestack, all blueprints must include a `healthz` endpoint.
+Warestack relies on this endpoint to verify the correct operation of the service.
 
 ## Questions & Contributions
 

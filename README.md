@@ -1,19 +1,19 @@
-# Warestack Seeds Repository
+# Warestack Blueprints Repository
 
-![GitHub stars](https://img.shields.io/github/stars/warestack/seeds?style=social)
-![GitHub forks](https://img.shields.io/github/forks/warestack/seeds?style=social)
-![GitHub issues](https://img.shields.io/github/issues/warestack/seeds)
+![GitHub stars](https://img.shields.io/github/stars/warestack/blueprints?style=social)
+![GitHub forks](https://img.shields.io/github/forks/warestack/blueprints?style=social)
+![GitHub issues](https://img.shields.io/github/issues/warestack/blueprints)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Pre-commit hooks status](https://github.com/warestack/seeds/workflows/pre-commit-hooks/badge.svg)](https://github.com/warestack/seeds/actions)
+[![Pre-commit hooks status](https://github.com/warestack/blueprints/workflows/pre-commit-hooks/badge.svg)](https://github.com/warestack/blueprints/actions)
 
-Welcome to the Warestack Seeds Repository! This repository houses a collection of seed projects to help developers
-kickstart their projects on the Warestack platform, spanning multiple technologies, frameworks, and configurations.
+Welcome to the Warestack Blueprints Repository! This repository serves as a collection of project templates to help
+developers kickstart their projects across a wide range of technologies, frameworks, and configurations.
 
-## What are Seeds?
+## What are Blueprints?
 
-Seeds are pre-configured project templates. Instead of starting from scratch, seeds provide developers with a
-foundational codebase, configuration, and structure. This way, you can dive right into building features and
-implementing your logic.
+Blueprints are comprehensive project templates designed to provide developers with a robust starting point. They include
+foundational codebases, configurations, and structures tailored to various development needs, enabling you to focus on
+feature development and logic implementation from day one.
 
 ## Technologies & Frameworks Supported
 
@@ -22,19 +22,20 @@ implementing your logic.
 - **Data Processing**: Pandas, Apache Spark, Hadoop, Kubernetes Jobs, etc.
 - **Artificial Intelligence & Machine Learning**: TensorFlow, PyTorch, SciKit-Learn, Keras, etc.
 - **Infrastructure as Code**: Infrastructure templates for automating cloud infrastructure provisioning.
-- **CI/CD & Automation Tools**: Workflow templates for continuous and integration and delivery.
+- **CI/CD & Automation Tools**: - **CI/CD & Automation Tools**: Workflow templates for continuous integration and
+  delivery, including GitHub Actions and Composite Actions.
 - ... and many more!
 
-## How to Use a Seed
+## How to Use a Blueprint
 
-1. Browse the repository and locate a seed that matches your desired tech stack.
-2. Clone the seed to your local environment.
-3. Follow the specific README associated with that seed for setup instructions.
+1. Browse the repository and locate a blueprint that matches your desired tech stack.
+2. Clone the blueprint to your local environment.
+3. Follow the specific README associated with that blueprint for setup instructions.
 4. Start building!
 
 ## Contributing
 
-We believe in the power of the community. If you've built or want to build a seed that isn't yet in this repository,
+We believe in the power of the community. If you've built or want to build a blueprint that isn't yet in this repository,
 we'd love for you to contribute. Check out our [Contributing Guide](./CONTRIBUTING.md) to get started.
 
 ### Labels for PRs
@@ -47,17 +48,17 @@ When creating a PR, make sure to attach appropriate labels. This helps in catego
 - `ml/ai`: For PRs related to artificial intelligence and machine learning technologies.
 - `infrastructure-as-code`: For PRs related to infrastructure templates and other IaC components.
 - `ci/cd`: For PRs related to continuous integration and delivery tools.
-- ... (you can extend this list based on the categories of seeds you anticipate)
+- ... (This list is extensible to accommodate emerging blueprint categories.)
 
-## What Makes a Good Seed?
+## What Makes a Good Blueprint?
 
-- **Comprehensive Documentation**: Every seed should have a detailed README explaining how to set up, use, and deploy
-  the project.
+- **Comprehensive Documentation**: Every blueprint should have a detailed README explaining how to set up, use, and
+  deploy the project.
 - **Maintainability**: Code should be clean, readable, and modular.
-- **Scalability**: Seeds should be designed with best practices in mind to scale efficiently.
+- **Scalability**: Design blueprints with scalability in mind, following best practices.
 - **Security**: Basic security practices should be in place.
 - **Community Driven**: We value and appreciate every PR. Community feedback and improvements help in refining the
-  seeds.
+  blueprints.
 
 ## Resources
 
