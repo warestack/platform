@@ -1,8 +1,8 @@
 # Contributing to Warestack
 
-Thank you for considering contributing to Warestack Blueprints! This repository hosts a collection of blueprints designed to
-jump-start projects on our platform. Whether you're adding a new seed, improving an existing one, or simply fixing a
-typo, your contributions are greatly valued.
+Thank you for considering contributing to Warestack Blueprints! This repository serves as a collection of project
+templates to help developers kickstart their projects. Whether you're adding a new seed, improving an existing one, or
+simply fixing a typo, your contributions are greatly valued.
 
 ## Types of Contributions
 
@@ -26,8 +26,8 @@ To ensure a smooth contribution process:
 - **Push** your changes to your fork on GitHub.
 - **Open a pull request (PR)** against the main repository. Please include a detailed description of your contribution.
 
-Ensure that your contributions do not break existing blueprints and are well-documented. New blueprints should be accompanied by
-sufficient documentation for users to implement them effectively.
+Ensure that your contributions do not break existing blueprints and are well-documented. New blueprints should be
+accompanied by sufficient documentation for users to implement them effectively.
 
 ## Guidelines
 
