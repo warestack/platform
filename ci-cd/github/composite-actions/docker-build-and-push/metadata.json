@@ -1,0 +1,6 @@
+{
+  "name": "docker-build-and-push",
+  "category": "CI/CD & Automation",
+  "type": "GitHub Composite Action",
+  "tags": ["Docker", "Continuous Integration", "Continuous Deployment"]
+}
