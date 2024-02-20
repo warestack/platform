@@ -1,0 +1,6 @@
+{
+  "name": "GitHub",
+  "type": "category",
+  "description": "Blueprints and workflows tailored for GitHub Actions, including composite actions and reusable workflows for common CI/CD tasks.",
+  "tags": ["GitHub", "GitHub Actions", "CI/CD"]
+}

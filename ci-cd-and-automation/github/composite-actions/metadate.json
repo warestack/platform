@@ -1,0 +1,6 @@
+{
+  "name": "Composite Actions",
+  "type": "category",
+  "description": "Reusable composite actions for GitHub Actions, enabling complex workflows to be composed from simpler, single-purpose actions.",
+  "tags": ["GitHub Actions", "Composite Actions", "Reusable"]
+}

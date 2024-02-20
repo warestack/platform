@@ -1,0 +1,6 @@
+{
+  "name": "CI/CD & Automation",
+  "type": "category",
+  "description": "Contains blueprints for Continuous Integration and Continuous Deployment, including automation tools and workflows for various technologies.",
+  "tags": ["CI/CD", "Automation", "DevOps"]
+}

@@ -25,7 +25,7 @@ steps:
   # ...
 
   - name: Build and push Docker image to a registry
-    uses: warestack/blueprints/ci-cd/github/composite-actions/action.yaml@main
+    uses: warestack/blueprints/ci-cd-and-automation/github/composite-actions/action.yaml@main
     with:
       image-name: 'sample-app'
       registry-url: ${{ steps.<login_step_id>.outputs.registry }}
