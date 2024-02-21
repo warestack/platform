@@ -1,0 +1,7 @@
+{
+  "name": "GCP-GKE",
+  "type": "blueprint",
+  "description": "A Terraform module for creating and managing a Google Kubernetes Engine (GKE) cluster with sensible defaults.",
+  "version": "1.0.0",
+  "tags": ["GCP", "GKE", "Kubernetes", "Terraform"]
+}

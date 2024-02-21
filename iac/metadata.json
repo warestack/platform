@@ -1,0 +1,6 @@
+{
+  "name": "Infrastructure as Code",
+  "type": "category",
+  "description": "Contains blueprints and templates for managing infrastructure through code. Covers various tools and platforms.",
+  "tags": ["IaC", "DevOps", "Automation"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Terraform",
+  "type": "category",
+  "description": "Terraform templates and modules for provisioning and managing infrastructure across multiple cloud providers.",
+  "tags": ["Terraform", "HashiCorp", "Cloud"]
+}
