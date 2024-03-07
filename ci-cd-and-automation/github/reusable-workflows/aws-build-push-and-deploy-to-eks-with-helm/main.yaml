@@ -1,0 +1,96 @@
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: "Specifies the deployment environment (e.g., 'development', 'staging', 'production', 'QA', 'testing')."
+        required: true
+      region:
+        description: 'The AWS region where the service resources will be hosted. This should match your organization operational region.'
+        required: true
+      image_name:
+        description: 'The name of the Docker image to be built and pushed to the container registry. This name should be unique within your registry.'
+        required: true
+      release_name:
+        description: 'A unique name for this release, used to identify helm releases.'
+        required: true
+      eks_cluster:
+        description: 'The name of the EKS cluster where the application will be deployed. This name should correspond to an existing EKS cluster configured within your AWS account.'
+        required: true
+      namespace:
+        description: 'The Kubernetes namespace within the EKS cluster to isolate resources. Namespaces are used to isolate applications within a single cluster.'
+        required: true
+      public_url:
+        description: "The domain name for accessing the service publicly. This URL should include both the subdomain and base domain name."
+        required: true
+      port:
+        description: 'The port should match the one specified in the service Dockerfile and is used for routing external traffic to the application.'
+        required: true
+      helm_path:
+        description: 'The path of the chart which defines the Kubernetes resources and configurations used for deploying the application to EKS.'
+        required: true
+
+concurrency:
+  group: ${{ inputs.release_name }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Setup, Build and Publish Dokcer image to ECR, and Deploy to EKS using Helm
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ github.head_ref || github.ref_name }}
+      ENVIRONMENT: ${{ github.event.inputs.environment }}
+      REGION: ${{ github.event.inputs.region }}
+      IMAGE_NAME: ${{ github.event.inputs.image_name }}
+      EKS_CLUSTER: ${{ github.event.inputs.eks_cluster }}
+      NAMESPACE: ${{ github.event.inputs.namespace }}
+      RELEASE_NAME: ${{ github.event.inputs.release_name }}
+      PUBLIC_URL: ${{ github.event.inputs.public_url }}
+      PORT: ${{ github.event.inputs.port }}
+      HELM_PATH: ${{ github.event.inputs.helm_path }}
+      JOB_STATUS: succeeded
+
+    # Add "id-token" with the intended permissions.
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      # Checkout GitHub branch's config
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BRANCH }}
+          fetch-depth: 0
+
+      # Configure AWS
+      - name: Configure AWS
+        id: configure_aws
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/configure_aws/action.yaml@main
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_region: ${{ env.REGION }}
+          eks_cluster: ${{ env.EKS_CLUSTER }}
+
+      # Build and push image
+      - name: Build and push image
+        id: build_and_deploy
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/docker-build-and-push/action.yaml@main
+        with:
+          registry_url: ${{ steps.configure_aws.outputs.registry_url }}
+          image_name: ${{ env.IMAGE_NAME }}
+
+      # Install or upgrade Helm chart
+      - name: Install or upgrade Helm chart
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/helm-install-local-chart/action.yaml@main
+        with:
+          release_name: ${{ env.RELEASE_NAME }}
+          namespace: ${{ env.NAMESPACE }}
+          helm_path: ${{ env.HELM_PATH }}
+          environment: ${{ env.ENVIRONMENT }}
+          registry_url: ${{ steps.configure_aws.outputs.registry_url }}
+          image_name: ${{ env.IMAGE_NAME }}
+          image_tag: ${{ steps.build_and_deploy.outputs.image_tag }}
+          public_url: ${{ env.PUBLIC_URL }}
+          port: ${{ env.PORT }}

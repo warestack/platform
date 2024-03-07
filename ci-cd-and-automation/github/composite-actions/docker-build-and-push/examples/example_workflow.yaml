@@ -65,7 +65,7 @@ jobs:
 
       # Build and push image
       - name: Build and push image
-        uses: warestack/blueprints/ci-cd-and-automation/github/composite-actions/action.yaml@main
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/docker-build-and-push/action.yaml@main
         with:
           registry_url: ${{ steps.construct_registry_url.outputs.registry_url }}
           image_name: ${{ env.IMAGE_NAME }}
