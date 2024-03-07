@@ -35,7 +35,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Setup, Build and Publish Dokcer image to ECR, and Deploy to EKS using Helm
+    name: Setup, Build and Publish Docker image to ECR, and Deploy to EKS using Helm
     runs-on: ubuntu-latest
     env:
       BRANCH: ${{ github.head_ref || github.ref_name }}
