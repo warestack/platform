@@ -1,12 +1,12 @@
-# Warestack Blueprints Repository
+# Warestack Platform Repository
 
-![GitHub stars](https://img.shields.io/github/stars/warestack/blueprints?style=social)
-![GitHub forks](https://img.shields.io/github/forks/warestack/blueprints?style=social)
-![GitHub issues](https://img.shields.io/github/issues/warestack/blueprints)
+![GitHub stars](https://img.shields.io/github/stars/warestack/platform?style=social)
+![GitHub forks](https://img.shields.io/github/forks/warestack/platform?style=social)
+![GitHub issues](https://img.shields.io/github/issues/warestack/platform)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Pre-commit hooks status](https://github.com/warestack/blueprints/workflows/pre-commit-hooks/badge.svg)](https://github.com/warestack/blueprints/actions)
+[![Pre-commit hooks status](https://github.com/warestack/platform/workflows/pre-commit-hooks/badge.svg)](https://github.com/warestack/platform/actions)
 
-Welcome to the Warestack Blueprints Repository! This repository serves as a collection of project templates to help
+Welcome to the Warestack Platform Repository! This repository serves as a collection of project templates to help
 developers kickstart their projects across a wide range of technologies, frameworks, and configurations.
 
 ## What are Blueprints?
