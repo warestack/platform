@@ -31,7 +31,7 @@ on:
         required: true
       port:
         description: 'The port should match the one specified in the service Dockerfile and is used for routing external traffic to the application.'
-        type: boolean
+        type: number
         required: true
       helm_path:
         description: 'The path of the chart which defines the Kubernetes resources and configurations used for deploying the application to EKS.'
