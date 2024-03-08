@@ -75,7 +75,7 @@ jobs:
       # Configure AWS
       - name: Configure AWS
         id: configure_aws
-        uses: warestack/platform/.github/actions/configure-aws@v1.0.0
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/aws-configure@v1.0.0
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -85,14 +85,14 @@ jobs:
       # Build and push image
       - name: Build and push image
         id: build_and_deploy
-        uses: warestack/platform/.github/actions/docker-build-and-push@v1.0.0
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/docker-build-and-push@v1.0.0
         with:
           registry_url: ${{ steps.configure_aws.outputs.registry_url }}
           image_name: ${{ env.IMAGE_NAME }}
 
       # Install or upgrade Helm chart
       - name: Install or upgrade Helm chart
-        uses: warestack/platform/.github/actions/helm-install-local-chart@v1.0.0
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/helm-install-local-chart@v1.0.0
         with:
           release_name: ${{ env.RELEASE_NAME }}
           namespace: ${{ env.NAMESPACE }}
