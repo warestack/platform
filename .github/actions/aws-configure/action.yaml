@@ -1,0 +1,61 @@
+name: 'Configure AWS'
+description: 'Configures AWS credentials, authenticates to ECR and creates AWS profile'
+
+inputs:
+  aws-access-key-id:
+    description: 'AWS Access Key ID'
+    required: true
+  aws-secret-access-key:
+    description: 'AWS Secret Access Key'
+    required: true
+  aws-region:
+    description: 'The region on AWS to host the workspace resources in'
+    required: true
+  eks-cluster:
+    description: 'The name of the EKS cluster on AWS'
+    required: true
+outputs:
+  registry-url:
+    description: 'The URL of the Container Registry in AWS'
+    value: ${{ steps.construct-registry-url.outputs.registry-url }}
+
+runs:
+  using: "composite"
+  steps:
+    # Configure AWS credentials
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ inputs.aws-access-key-id }}
+        aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
+        aws-region: ${{ inputs.aws-region }}
+
+    # Configure authentication to ECR
+    - name: Authenticate to ECR
+      id: ecr
+      uses: jwalton/gh-ecr-login@v1
+      with:
+        access-key-id: ${{ inputs.aws-access-key-id }}
+        secret-access-key: ${{ inputs.aws-secret-access-key }}
+        region: ${{ inputs.aws-region }}
+
+    # Create profile for AWS interface
+    - name: Create the default profile for EKS/ECR interface
+      run: |-
+        aws configure set aws_access_key_id ${{ inputs.aws-access-key-id }}
+        aws configure set aws_secret_access_key ${{ inputs.aws-secret-access-key }}
+
+    # Construct the ECR registry URL
+    - name: Construct ECR Registry URL
+      id: construct-registry-url
+      run: |-
+        registry_url="${{ inputs.aws-account-id }}.dkr.ecr.${{ inputs.aws-region }}.amazonaws.com"
+        echo "registry_url=$registry_url" >> $GITHUB_ENV
+        echo "::set-output name=registry-url::$registry_url"
+
+    # Update kube-config for EKS cluster
+    - name: Config kubectl
+      id: kube-config
+      run: |
+        # Update kube-config for EKS cluster
+        aws eks --region ${{ inputs.aws-region }} update-kubeconfig --name ${{ inputs.eks-cluster }}

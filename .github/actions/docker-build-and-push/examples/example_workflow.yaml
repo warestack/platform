@@ -1,0 +1,76 @@
+name: 'Build and push Docker image'
+description: 'Build and push Docker image to a AWS container registry'
+
+on:
+  push:
+    branches:
+      - 'main'
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+    name: Configure, Build, and Publish
+    runs-on: ubuntu-latest
+    env:
+      REGION: ${{ github.event.inputs.region }}
+      IMAGE_NAME: sample-app
+      # Set up the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` secrets in your GitHub repository before running the
+      # workflow. This is important because without these secrets, the workflow would not be able to authenticate with
+      # AWS ECR and the job would fail. Always ensure that sensitive credentials are stored securely as secrets and not
+      # hardcoded in the workflow file.
+
+    # Add "id-token" with the intended permissions.
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      # Checkout GitHub branch's config
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Configure AWS credentials
+      - name: Configure AWS credentials
+        id: configure_aws_credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.REGION }}
+
+      # Configure authentication to ECR
+      - name: Authenticate to ECR
+        uses: jwalton/gh-ecr-login@v1
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: ${{ env.REGION }}
+
+      # Create profile for AWS interface
+      - name: Create the default profile for EKS/ECR interface
+        run: |-
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        shell: bash
+
+      # Construct the ECR registry URL
+      - name: Construct ECR Registry URL
+        id: construct_registry_url
+        run: |-
+          registry_url="${{ steps.configure_aws_credentials.outputs.aws-account-id }}.dkr.ecr.${{ inputs.aws_region }}.amazonaws.com"
+          echo "registry_url=$registry_url" >> $GITHUB_ENV
+          echo "::set-output name=registry_url::$registry_url"
+        shell: bash
+
+      # Build and push image
+      - name: Build and push image
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/docker-build-and-push/action.yaml@main
+        with:
+          registry_url: ${{ steps.construct_registry_url.outputs.registry_url }}
+          image_name: ${{ env.IMAGE_NAME }}
+
+      # Exit with error on failure
+      - name: Exit with error on failure
+        if: ${{ failure() }}
+        run: exit 1

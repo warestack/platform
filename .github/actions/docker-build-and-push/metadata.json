@@ -1,0 +1,7 @@
+{
+  "name": "Docker Build and Push",
+  "description": "A GitHub Composite Action that builds a Docker image from your application and pushes it to a Docker registry.",
+  "type": "built-in-component",
+  "version": "1.0.0",
+  "tags": ["Docker", "GitHub Actions", "CI/CD", "Composite Action", "Deployment"]
+}
