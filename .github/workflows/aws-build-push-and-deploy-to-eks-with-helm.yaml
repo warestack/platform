@@ -75,7 +75,7 @@ jobs:
       # Configure AWS
       - name: Configure AWS
         id: configure_aws
-        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/configure_aws/action.yaml@main
+        uses: warestack/platform/ci-cd-and-automation/github/composite-actions/configure-aws/action.yaml@main
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
