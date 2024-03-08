@@ -27,13 +27,17 @@ runs:
         # Set the environment variables
         echo "image_tag=${image_tag}" >> $GITHUB_ENV
         echo "::set-output name=image-tag::${image_tag}"
+      shell: bash
 
     # Build the Docker image
     - name: Build Docker image
-      run: docker build --tag ${{ env.image_tag }} .
+      run: |-
+        docker build --tag ${{ env.image_tag }} .
+      shell: bash
 
     # Push the Docker image to the registry
     - name: Push Docker image to registry
       id: push
       run: |-
         docker push ${{ env.image_tag }}
+      shell: bash
