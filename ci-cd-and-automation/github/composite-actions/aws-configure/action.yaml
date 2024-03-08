@@ -44,6 +44,7 @@ runs:
       run: |-
         aws configure set aws_access_key_id ${{ inputs.aws-access-key-id }}
         aws configure set aws_secret_access_key ${{ inputs.aws-secret-access-key }}
+      shell: bash
 
     # Construct the ECR registry URL
     - name: Construct ECR Registry URL
@@ -52,6 +53,7 @@ runs:
         registry_url="${{ inputs.aws-account-id }}.dkr.ecr.${{ inputs.aws-region }}.amazonaws.com"
         echo "registry_url=$registry_url" >> $GITHUB_ENV
         echo "::set-output name=registry-url::$registry_url"
+      shell: bash
 
     # Update kube-config for EKS cluster
     - name: Config kubectl
@@ -59,3 +61,4 @@ runs:
       run: |
         # Update kube-config for EKS cluster
         aws eks --region ${{ inputs.aws-region }} update-kubeconfig --name ${{ inputs.eks-cluster }}
+      shell: bash
