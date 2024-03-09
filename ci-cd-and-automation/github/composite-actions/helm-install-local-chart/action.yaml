@@ -35,7 +35,7 @@ runs:
     # Install or Upgrade the Helm release
     - name: Install or upgrade helm release
       env:
-        ENVIRONMENT: ${{ github.event.inputs.environment }}
+        ENVIRONMENT: ${{ inputs.environment }}
         RELEASE_NAME: ${{ inputs.release_name }}
         NAMESPACE: ${{ inputs.namespace }}
         IMAGE_REPO: ${{ inputs.registry_url }}/${{ inputs.image_name }}

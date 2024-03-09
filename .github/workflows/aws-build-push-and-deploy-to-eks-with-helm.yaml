@@ -46,17 +46,18 @@ jobs:
   deploy:
     name: Setup, Build and Publish Docker image to ECR, and Deploy to EKS using Helm
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     env:
       BRANCH: ${{ github.head_ref || github.ref_name }}
-      ENVIRONMENT: ${{ github.event.inputs.environment }}
-      REGION: ${{ github.event.inputs.region }}
-      IMAGE_NAME: ${{ github.event.inputs.image_name }}
-      EKS_CLUSTER: ${{ github.event.inputs.eks_cluster }}
-      NAMESPACE: ${{ github.event.inputs.namespace }}
-      RELEASE_NAME: ${{ github.event.inputs.release_name }}
-      PUBLIC_URL: ${{ github.event.inputs.public_url }}
-      PORT: ${{ github.event.inputs.port }}
-      HELM_PATH: ${{ github.event.inputs.helm_path }}
+      ENVIRONMENT: ${{ inputs.environment }}
+      REGION: ${{ inputs.region }}
+      IMAGE_NAME: ${{ inputs.image_name }}
+      EKS_CLUSTER: ${{ inputs.eks_cluster }}
+      NAMESPACE: ${{ inputs.namespace }}
+      RELEASE_NAME: ${{ inputs.release_name }}
+      PUBLIC_URL: ${{ inputs.public_url }}
+      PORT: ${{ inputs.port }}
+      HELM_PATH: ${{ inputs.helm_path }}
       JOB_STATUS: succeeded
 
     # Add "id-token" with the intended permissions.

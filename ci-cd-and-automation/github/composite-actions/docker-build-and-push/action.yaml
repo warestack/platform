@@ -2,16 +2,16 @@ name: 'Build and push Docker image'
 description: 'Build and push Docker image to a container registry, assuming authentication is handled separately'
 
 inputs:
-  image-name:
-    description: 'Name of the image to build and push'
-    required: true
-  registry-url:
+  registry_url:
     description: 'URL of the container registry'
     required: true
+  image_name:
+    description: 'Name of the image to build and push'
+    required: true
 outputs:
-  image-tag:
+  image_tag:
     description: 'The tag of the image pushed to the container registry'
-    value: ${{ steps.push.outputs.image-tag }}
+    value: ${{ steps.tag.outputs.image_tag }}
 
 runs:
   using: "composite"
@@ -23,21 +23,18 @@ runs:
         github_sha="${{ github.sha }}"
         version_date=$(date +'%Y%m%d%H%M%S')
         version_tag="${github_sha::7}-${version_date}"
-        image_tag="${{ inputs.registry-url }}/${{ inputs.image-name }}:${version_tag}"
-        # Set the environment variables
+        image_tag="${{ inputs.registry_url }}/${{ inputs.image_name }}:${version_tag}"
         echo "image_tag=${image_tag}" >> $GITHUB_ENV
-        echo "::set-output name=image-tag::${image_tag}"
+        echo "::set-output name=image_tag::${image_tag}"
       shell: bash
 
     # Build the Docker image
     - name: Build Docker image
-      run: |-
-        docker build --tag ${{ env.image_tag }} .
+      run: docker build --tag ${{ env.image_tag }} .
       shell: bash
 
     # Push the Docker image to the registry
     - name: Push Docker image to registry
       id: push
-      run: |-
-        docker push ${{ env.image_tag }}
+      run: docker push ${{ env.image_tag }}
       shell: bash
