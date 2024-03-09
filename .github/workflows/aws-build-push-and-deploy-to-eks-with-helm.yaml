@@ -37,6 +37,11 @@ on:
         description: 'The path of the chart which defines the Kubernetes resources and configurations used for deploying the application to EKS.'
         type: string
         required: true
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
 
 concurrency:
   group: ${{ inputs.release_name }}
@@ -46,7 +51,7 @@ jobs:
   deploy:
     name: Setup, Build and Publish Docker image to ECR, and Deploy to EKS using Helm
     runs-on: ubuntu-latest
-#    environment: ${{ inputs.environment }}
+    environment: ${{ inputs.environment }}
     env:
       BRANCH: ${{ github.head_ref || github.ref_name }}
       ENVIRONMENT: ${{ inputs.environment }}
