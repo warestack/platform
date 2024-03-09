@@ -9,8 +9,11 @@ inputs:
     description: 'Name of the image to build and push'
     required: true
 outputs:
+  image_uri:
+    description: 'The URI pointing to the location of the Docker image in the container registry. This URI includes both the registry URL and the image name.'
+    value: ${{ steps.build.outputs.image_uri }}
   image_tag:
-    description: 'The tag of the image pushed to the container registry'
+    description: 'A specific identifier associated with the version of the Docker image that was pushed to the container registry.'
     value: ${{ steps.tag.outputs.image_tag }}
 
 runs:
@@ -23,18 +26,25 @@ runs:
         github_sha="${{ github.sha }}"
         version_date=$(date +'%Y%m%d%H%M%S')
         version_tag="${github_sha::7}-${version_date}"
-        image_tag="${{ inputs.registry_url }}/${{ inputs.image_name }}:${version_tag}"
-        echo "image_tag=${image_tag}" >> $GITHUB_ENV
-        echo "::set-output name=image_tag::${image_tag}"
+        echo "version_tag=${version_tag}" >> $GITHUB_ENV
+        echo "::set-output name=image_tag::${version_tag}"
       shell: bash
 
-    # Build the Docker image
+    # Generate the full image URI
+    - name: Generate image URI
+      id: build
+      run: |-
+        image_uri="${{ inputs.registry_url }}/${{ inputs.image_name }}"
+        echo "image_uri=${image_uri}" >> $GITHUB_ENV
+        echo "::set-output name=image_uri::${image_uri}"
+      shell: bash
+
+    # Build the Docker image with the generated tag
     - name: Build Docker image
-      run: docker build --tag ${{ env.image_tag }} .
+      run: docker build --tag ${{ env.image_uri }}:${{ env.version_tag }} .
       shell: bash
 
     # Push the Docker image to the registry
     - name: Push Docker image to registry
-      id: push
-      run: docker push ${{ env.image_tag }}
+      run: docker push ${{ env.image_uri }}:${{ env.version_tag }}
       shell: bash

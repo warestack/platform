@@ -10,14 +10,11 @@ inputs:
   namespace:
     description: 'The organization to be used for the namespace in helm install'
     required: true
-  registry_url:
-    description: 'URL of the container registry'
-    required: true
-  image_name:
-    description: 'Name of the image to build and push'
+  image_uri:
+    description: 'URI of the Docker image in the container registry. Helm will use this to pull the image.'
     required: true
   image_tag:
-    description: 'The tag of the image pushed to the container registry'
+    description: 'Specific tag of the Docker image to be deployed. Allows for precise version control.'
     required: true
   public_url:
     description: 'Public URL to used for exposing the service'
@@ -38,7 +35,7 @@ runs:
         ENVIRONMENT: ${{ inputs.environment }}
         RELEASE_NAME: ${{ inputs.release_name }}
         NAMESPACE: ${{ inputs.namespace }}
-        IMAGE_REPO: ${{ inputs.registry_url }}/${{ inputs.image_name }}
+        IMAGE_URI: ${{ inputs.image_uri }}
         IMAGE_TAG: ${{ inputs.image_tag }}
         PUBLIC_URL: ${{ inputs.public_url }}
         PORT: ${{ inputs.port }}
@@ -46,8 +43,8 @@ runs:
       run: |-
         helm upgrade ${{ env.RELEASE_NAME }} ${{ env.HELM_PATH }} --namespace ${{ env.NAMESPACE }} --create-namespace --wait \
           --values ${{ env.HELM_PATH }}/values-${{ env.ENVIRONMENT }}.yaml \
-          --set image.repository=$IMAGE_REPO \
-          --set image.tag=$IMAGE_TAG \
+          --set image.repository=${{ env.IMAGE_URI }} \
+          --set image.tag=${{ env.IMAGE_TAG }} \
           --set cert.tls.secretName=$RELEASE_NAME \
           --set cert.commonName=$PUBLIC_URL \
           --set cert.dnsNames.hosts={$PUBLIC_URL} \

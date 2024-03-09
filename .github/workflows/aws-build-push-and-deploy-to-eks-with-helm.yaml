@@ -104,8 +104,7 @@ jobs:
           namespace: ${{ env.NAMESPACE }}
           helm_path: ${{ env.HELM_PATH }}
           environment: ${{ env.ENVIRONMENT }}
-          registry_url: ${{ steps.configure_aws.outputs.registry_url }}
-          image_name: ${{ env.IMAGE_NAME }}
+          image_uri: ${{ steps.build_and_deploy.outputs.image_uri }}
           image_tag: ${{ steps.build_and_deploy.outputs.image_tag }}
           public_url: ${{ env.PUBLIC_URL }}
           port: ${{ env.PORT }}
