@@ -1,0 +1,31 @@
+name: "Build and push to ECR and deploy to EKS with Helm"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment environment (e.g., 'development', 'staging', 'production')."
+        required: true
+        type: string
+
+jobs:
+  reusable-workflow-caller:
+    name: Call reusable workflow to Setup, Build and Publish Docker image to ECR, and Deploy to EKS using Helm
+    # Dynamically set the environment for workflow_dispatch, or use a default/fallback environment for push events
+    environment: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'default-environment' }}
+    uses: warestack/platform/.github/workflows/aws-build-push-and-deploy-to-eks-with-helm.yaml@main
+    with:
+      region: ${{ vars.region }}
+      image_name: ${{ vars.image_name }}
+      release_name: ${{ vars.release_name }}
+      eks_cluster: ${{ vars.eks_cluster }}
+      namespace: ${{ vars.namespace }}
+      public_url: ${{ vars.public_url }}
+      port: ${{ vars.port }}
+      helm_path: ${{ vars.helm_path }}
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
