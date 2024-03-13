@@ -1,10 +1,6 @@
 on:
   workflow_call:
     inputs:
-      environment:
-        description: "Specifies the deployment environment (e.g., 'development', 'staging', 'production', 'QA', 'testing')."
-        type: string
-        required: true
       region:
         description: 'The AWS region where the service resources will be hosted. This should match your organization operational region.'
         type: string
@@ -39,8 +35,12 @@ on:
         required: true
     secrets:
       AWS_ACCESS_KEY_ID:
+        description: 'Specifies an AWS access key associated with an IAM account.'
+        type: string
         required: true
       AWS_SECRET_ACCESS_KEY:
+        description: 'Specifies the secret key associated with the access key. This is essentially the "password" for the access key.'
+        type: string
         required: true
 
 concurrency:
@@ -51,10 +51,8 @@ jobs:
   deploy:
     name: Setup, Build and Publish Docker image to ECR, and Deploy to EKS using Helm
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
     env:
       BRANCH: ${{ github.head_ref || github.ref_name }}
-      ENVIRONMENT: ${{ inputs.environment }}
       REGION: ${{ inputs.region }}
       IMAGE_NAME: ${{ inputs.image_name }}
       EKS_CLUSTER: ${{ inputs.eks_cluster }}
@@ -103,7 +101,6 @@ jobs:
           release_name: ${{ env.RELEASE_NAME }}
           namespace: ${{ env.NAMESPACE }}
           helm_path: ${{ env.HELM_PATH }}
-          environment: ${{ env.ENVIRONMENT }}
           image_uri: ${{ steps.build_and_deploy.outputs.image_uri }}
           image_tag: ${{ steps.build_and_deploy.outputs.image_tag }}
           public_url: ${{ env.PUBLIC_URL }}
