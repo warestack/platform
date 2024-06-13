@@ -96,6 +96,7 @@ jobs:
       - name: Install or upgrade Helm chart
         uses: warestack/platform/ci-cd-and-automation/github/composite-actions/helm-install-local-chart@v1.0.0
         with:
+          environment: ${{ env.NAMESPACE }}
           release_name: ${{ env.RELEASE_NAME }}
           namespace: ${{ env.NAMESPACE }}
           helm_path: ${{ env.HELM_PATH }}
