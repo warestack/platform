@@ -36,11 +36,9 @@ on:
     secrets:
       AWS_ACCESS_KEY_ID:
         description: 'Specifies an AWS access key associated with an IAM account.'
-        type: string
         required: true
       AWS_SECRET_ACCESS_KEY:
         description: 'Specifies the secret key associated with the access key. This is essentially the "password" for the access key.'
-        type: string
         required: true
 
 concurrency:
