@@ -12,7 +12,7 @@ on:
 jobs:
   pre-commit:
     name: Lint code and README files
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
 
       # Checkout the branch

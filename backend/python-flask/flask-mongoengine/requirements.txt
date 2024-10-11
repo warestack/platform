@@ -1,4 +1,0 @@
-Flask
-MongoEngine
-Flask-MongoEngine
-python-dotenv

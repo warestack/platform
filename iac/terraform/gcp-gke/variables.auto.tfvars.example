@@ -1,4 +1,0 @@
-project_id      = "war***"
-resource_prefix = "war"
-region          = "europe-west2"
-zones           = ["europe-west2-a", "europe-west2-b", "europe-west2-c"]

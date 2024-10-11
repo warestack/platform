@@ -6,59 +6,90 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Pre-commit hooks status](https://github.com/warestack/platform/workflows/pre-commit-hooks/badge.svg)](https://github.com/warestack/platform/actions)
 
-Welcome to the Warestack Platform Repository! This repository serves as a collection of project templates to help
-developers kickstart their projects across a wide range of technologies, frameworks, and configurations.
+Welcome to the Warestack Platform Repository! This repository serves as a collection of reusable workflows to help
+developers kickstart their pipelines. This repository provides reusable GitHub Actions workflows and composite actions
+for any kind of projects.
 
-## What are Blueprints?
+## What is Reusable Workflow?
 
-Blueprints are comprehensive project templates designed to provide developers with a robust starting point. They include
-foundational codebases, configurations, and structures tailored to various development needs, enabling you to focus on
-feature development and logic implementation from day one.
+A reusable workflow is a GitHub Actions workflow that can be called from another workflow. This allows you to define
+common processes once and reuse them across multiple workflows, enhancing modularity and reducing duplication. By using
+reusable workflows, teams can maintain consistency in their CI/CD processes and streamline their development pipeline.
 
-## Technologies & Frameworks Supported
+### Example Reusable Workflow Use Case
 
-- **Frontend Frameworks**: React, Vue.js, Angular, etc.
-- **Backend Frameworks**: Node.js, Django, Flask, etc.
-- **Data Processing**: Pandas, Apache Spark, Hadoop, Kubernetes Jobs, etc.
-- **Artificial Intelligence & Machine Learning**: TensorFlow, PyTorch, SciKit-Learn, Keras, etc.
-- **Infrastructure as Code**: Infrastructure templates for automating cloud infrastructure provisioning.
-- **CI/CD & Automation Tools**: - **CI/CD & Automation Tools**: Workflow templates for continuous integration and
-  delivery, including GitHub Actions and Composite Actions.
-- ... and many more!
+For instance, you might have a reusable workflow for building and deploying applications that can be called from
+different project-specific workflows.
 
-## How to Use a Blueprint
+### How to Use a Reusable Workflow
 
-1. Browse the repository and locate a blueprint that matches your desired tech stack.
-2. Clone the blueprint to your local environment.
-3. Follow the specific README associated with that blueprint for setup instructions.
-4. Start building!
+To use a reusable workflow, you can define a job in your workflow file that references the reusable workflow. Here’s
+how to do it:
+
+- **Define the Job:** Use the uses keyword to specify the path to the reusable workflow file in your repository.
+- **Pass Inputs:** Provide any required inputs as defined in the reusable workflow. You can also pass secrets if needed.
+
+Example Usage
+
+Here’s an example of how to call the AWS Build, Push and Deploy to EKS with Helm reusable workflow:
+
+```yaml
+jobs:
+  deploy:
+    uses: warestack/platform/.github/workflows/aws-build-push-and-deploy-to-eks-with-helm.yaml@main
+    with:
+      environment: 'dev'  # or 'prod'
+      region: 'us-west-2'
+      image_name: 'my-app'
+      release_name: 'my-app-release'
+      eks_cluster: 'my-eks-cluster'
+      namespace: 'my-namespace'
+      public_url: 'myapp.example.com'
+      port: 80
+      helm_path: './chart/my-app'
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+```
+
+## What is a Composite Action?
+
+A composite action is a type of GitHub Action that allows you to combine multiple steps and scripts into a single
+reusable action. This enhances modularity and reusability, enabling developers to encapsulate complex logic or processes
+that can be reused across workflows. Composite actions are particularly useful for grouping related commands or steps
+that are often used together.
+
+### Example Composite Action Use Case
+
+For example, a composite action might handle the setup of a Docker environment, including building an image, tagging it,
+and pushing it to a container registry.
+
+### How to Use a Composite Action
+
+To use a composite action in your workflow, follow these steps:
+
+- **Define the Step:** Use the uses keyword to specify the path to the composite action in your repository.
+- **Pass Inputs:** Provide any required inputs as defined in the composite action.
+
+Example Usage
+
+Here’s an example of how to use the Docker Build and Push composite action:
+
+```yaml
+steps:
+  - name: Build and push Docker image
+    uses: warestack/platform/github/composite-actions/docker-build-and-push@v1.0.0
+    with:
+      environment: 'dev'  # or 'prod'
+      registry_url: '123456789012.dkr.ecr.us-west-2.amazonaws.com'
+      image_name: 'my-app'
+```
 
 ## Contributing
 
-We believe in the power of the community. If you've built or want to build a blueprint that isn't yet in this repository,
-we'd love for you to contribute. Check out our [Contributing Guide](./CONTRIBUTING.md) to get started.
-
-### Labels for PRs
-
-When creating a PR, make sure to attach appropriate labels. This helps in categorizing and reviewing PRs efficiently:
-
-- `frontend`: For PRs related to frontend frameworks.
-- `backend`: For PRs specific to backend implementations.
-- `data-processing`: For PRs focused on data processing techniques and tools.
-- `ml/ai`: For PRs related to artificial intelligence and machine learning technologies.
-- `infrastructure-as-code`: For PRs related to infrastructure templates and other IaC components.
-- `ci/cd`: For PRs related to continuous integration and delivery tools.
-- ... (This list is extensible to accommodate emerging blueprint categories.)
-
-## What Makes a Good Blueprint?
-
-- **Comprehensive Documentation**: Every blueprint should have a detailed README explaining how to set up, use, and
-  deploy the project.
-- **Maintainability**: Code should be clean, readable, and modular.
-- **Scalability**: Design blueprints with scalability in mind, following best practices.
-- **Security**: Basic security practices should be in place.
-- **Community Driven**: We value and appreciate every PR. Community feedback and improvements help in refining the
-  blueprints.
+We believe in the power of the community. If you've built or want to build a reusable workflow or composite action that
+isn't yet in this repository, we'd love for you to contribute.
+Check out our [Contributing Guide](./CONTRIBUTING.md) to get started.
 
 ## Resources
 
@@ -69,7 +100,3 @@ When creating a PR, make sure to attach appropriate labels. This helps in catego
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
----
-
-❤️ Made with passion by the Warestack Community. Join us on [Discord](https://discord.gg/pqg5sxhx6Y)!
